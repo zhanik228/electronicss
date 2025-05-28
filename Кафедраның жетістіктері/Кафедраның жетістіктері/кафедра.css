@@ -1,0 +1,406 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #1C2B45;
+}
+#languageSelector {
+    font-family: 'Arial', sans-serif; /* Font style */
+    font-size: 16px;                  /* Font size */
+    padding: 8px 15px;                /* Padding around the text */
+    border: 2px solid #ccc;           /* Border style */
+    border-radius: 5px;               /* Rounded corners */
+    background-color: #f9f9f9;        /* Light background */
+    color: #333;                      /* Text color */
+    cursor: pointer;                 /* Cursor on hover */
+    transition: all 0.3s ease;        /* Smooth transition for interaction */
+}
+
+#languageSelector:hover {
+    border-color: #1C2B45;            /* Border color change on hover */
+}
+
+#languageSelector:focus {
+    outline: none;                    /* Remove outline on focus */
+    border-color: #9D1828;            /* Border color on focus */
+    background-color: #e9f7fe;        /* Background color change on focus */
+}
+
+#languageSelector option {
+    padding: 10px;                    /* Padding inside each option */
+    text-align: center;               /* Center-align the text */
+}
+
+/* Стили для header */
+.header {
+    background-color: #1C2B45;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    height: 80px;
+    z-index: 10; /* Устанавливаем высокий z-index для header */
+    position: relative; /* Позиционирование для правильной работы с z-index */
+}
+
+/* Логотип */
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.logo-img {
+    width: 40px;
+    height: auto;
+    margin-right: 15px;
+}
+.photo img {
+    max-height: 60px;
+    height: auto; 
+    width: auto;  
+    object-fit: contain; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+/* Меню */
+.nav .menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.menu > li {
+    position: relative; /* Обеспечиваем правильное позиционирование подменю */
+}
+
+/* Стили для ссылок в меню */
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 12px;
+    transition: background 0.3s;
+}
+
+.menu a:hover {
+    background-color: #9D1828;
+}
+
+/* Подменю */
+.submenu {
+    position: absolute;
+    top: 100%; /* Сдвигаем подменю ниже родительского элемента */
+    left: 0;
+    background-color: #1C2B45;
+    border-radius: 12px;
+    display: none; /* Скрываем подменю по умолчанию */
+    flex-direction: column;
+    min-width: 180px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100; /* Устанавливаем высокий z-index для подменю */
+}
+
+/* Стили для ссылок внутри подменю */
+.submenu li a {
+    padding: 10px 15px;
+    color: white;
+    display: block;
+    white-space: nowrap;
+}
+
+.submenu li a:hover {
+    background-color: #9D1828;
+}
+
+/* Показываем подменю при наведении на родительский элемент */
+.has-submenu:hover .submenu {
+    display: flex; /* Подменю становится видимым */
+}
+
+/* Стили для кафедра бөлімінің */
+.department-info {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* Стили для сотрудников */
+.staff-member {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.staff-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.staff-member .info {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.staff-member h3 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.staff-member p {
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #1C2B45;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+/* Навигационные кнопки */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Точки навигации */
+.dots-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #717171;
+}
+
+/* Галерея контейнер */
+.gallery {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+/* Каждый элемент в галерее */
+.photo-item {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Стили для изображений */
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Текстовое описание для изображения */
+.caption {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Базалық стильдер */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #1C2B45;
+}
+
+.header {
+    background-color: #1C2B45;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+
+
+.nav .menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav .menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#staff {
+    margin-top: 40px;
+    text-align: center;
+}
+
+#staff h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.staff-members {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+}
+
+.staff-member {
+    width: 400px;
+    text-align: center;
+}
+
+.staff-member img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.staff-member a:hover img {
+    transform: scale(1.1);
+}
+
+.staff-member .info h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #1C2B45;
+}
+
+.footer {
+    background-color: #1C2B45;
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+}
+/* Стили для селектора языка */
+#languageSelector {
+    background-color: #1C2B45; /* Түсі */
+    color: white; /* Мәтін түсі */
+    padding: 10px 15px; /* Қабылдау (Padding) */
+    border-radius: 12px; /* Жиегін жұмсақ ету */
+    border: none; /* Шекараны алып тастау */
+    font-size: 16px; /* Шрифт өлшемі */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Керемет өту әсері */
+    cursor: pointer; /* Сілтеме ретінде көрсетуді қосу */
+}
+
+/* Эффект при наведении на селектор */
+#languageSelector:hover {
+    background-color: #9D1828; /* Түсті өзгертеміз */
+    color: white; /* Мәтіннің түсі */
+}
+
+/* Стиль для выпадающего списка */
+#languageSelector option {
+    background-color: #1C2B45; /* Түсі */
+    color: white; /* Мәтін түсі */
+    padding: 10px; /* Қабылдау (Padding) */
+    font-size: 16px; /* Шрифт өлшемі */
+}
+
+/* Эффект при наведении на элементы списка */
+#languageSelector option:hover {
+    background-color: #9D1828; /* Түсті өзгертеміз */
+}
+.search-container {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+#searchInput {
+    padding: 5px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#searchButton {
+    padding: 6px 10px;
+    background-color: #9D1828;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+#searchButton:hover {
+    background-color: #9D1828;
+}
+
+

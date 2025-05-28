@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Құжат</title>
+    <link rel="stylesheet" href="Практика.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="photo">
+            <img src="photo/22.jpg" alt="fahfh"/>
+        </div>
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="#" data-i18n="home">Басты бет</a></li>
+                <li class="has-submenu">
+                    <a href="#" data-i18n="department">Кафедра құрамы</a>
+                    <ul class="submenu">
+                        <li><a href="кафедра.html" data-i18n="staff">Қызметкерлерінің тізімі</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#" data-i18n="achievements">Кафедра жетістіктері</a>
+                    <ul class="submenu">
+                        <li><a href="жетістіктер.html" data-i18n="achievements_list">Жетістіктер</a></li>
+                    </ul>
+                </li>
+                <li><a href="жұмыс оқу.html" data-i18n="programs">Жұмыс оқу бағдарламалары</a></li>
+            </ul>
+        </nav>
+        <select id="languageSelector">
+            <option value="kk">Қаз</option>
+            <option value="ru">РУС</option>
+            <option value="en">ENG</option>
+        </select>
+        
+ 
+         
+        <!-- Search Form -->
+        <div class="search-container">
+            <form id="searchForm" method="get">
+                <input type="text" id="searchInput" name="search" placeholder="Іздеу...">
+                <button type="submit" id="searchButton">Іздеу</button>
+            </form>
+            <div id="searchResult"></div> Жумашева Толкын Дулаткызы<!-- Result container for search -->
+        </div>
+    </header>
+
+    <section class="department-info">
+        <h1 data-i18n="department_title">Электроника, автоматтандыру және робототехника кафедрасы</h1>
+    </section>
+
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <img src="images/Республикалық Worldskills  .jpg" alt="Image 1">
+            </div>
+            <div class="slide">
+                <img src="images/Колледж ішілік .jpg" alt="Image 2">
+            </div>
+            <div class="slide">
+                <img src="images/WorldSkills 2024 ж. Республикалық .jpg" alt="Image 3">
+            </div>
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+
+    <div class="dots-container">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <section class="gallery">
+        <!-- Photo item 1 -->
+        <div class="photo-item">
+            <img src="images/WorldSkills 2024 zhetysu Үздік жас маман Республикалық  .jpg" alt="Image 1">
+            <div class="caption" data-i18n="caption1">WorldSkills 2024 zhetysu Үздік жас маман Республикалық</div>
+        </div>
+        <!-- Photo item 2 -->
+        <div class="photo-item">
+            <img src="images/WorldSkills 2024 ж. Республикалық .jpg" alt="Image 2">
+            <div class="caption" data-i18n="caption2">WorldSkills 2024 ж. Республикалық</div>
+        </div>
+        <!-- Photo item 3 -->
+        <div class="photo-item">
+            <img src="images/Ақпараттық кабельдік желілер құзыреттілігі бойынша 2-орын Республикалық .jpeg" alt="Image 3">
+            <div class="caption" data-i18n="caption3">Ақпараттық кабельдік желілер құзыреттілігі бойынша 2-орын Республикалық</div>
+        </div>
+        <!-- Photo item 4 -->
+        <div class="photo-item">
+            <img src="images/Колледж ішілік .jpg" alt="Image 4">
+            <div class="caption" data-i18n="caption4">Колледж ішілік</div>
+        </div>
+        <!-- Photo item 5 -->
+        <div class="photo-item">
+            <img src="images/Колледж ішілік WorldSkills.jpg" alt="Image 5">
+            <div class="caption" data-i18n="caption5">Колледж ішілік WorldSkills</div>
+        </div>
+        <!-- Photo item 6 -->
+        <div class="photo-item">
+            <img src="images/Республикалық  WorldSkills.jpg" alt="Image 6">
+            <div class="caption" data-i18n="caption6">Республикалық WorldSkills</div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p data-i18n="footer_text">&copy; 2025 Электроника, автоматтандыру және робототехника кафедрасы. Барлық құқықтар қорғалған.</p>
+        </div>
+    </footer>
+
+    <script src="Практика.js"></script>
+</body>
+</html>
